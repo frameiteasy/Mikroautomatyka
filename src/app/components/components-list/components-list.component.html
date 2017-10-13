@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-3">
+    <h4>Nazwa</h4>
+  </div>
+  <div class="col-md-1">
+    <h4>Ilość</h4>
+  </div>
+  <div class="col-md-1">
+    <h4>Limit</h4>
+  </div>
+  <div class="col-md-1">
+    <h4>Spady</h4>
+  </div>
+  <div class="col-md-1">
+    <h4>Magazyn</h4>
+  </div>
+
+</div>
+<app-components-list-item
+  *ngFor="let el of elements; let i = index"
+  [item]="el"
+  [index]="i">
+</app-components-list-item>

@@ -1,0 +1,20 @@
+  <!-- <app-login *ngIf="!getLoggedOn()" (loggedOn)="onLogin($event)" ></app-login>
+  
+  <div *ngIf="getLoggedOn()" class="container">
+    <app-header (featureSelected)="onNavigate($event)" (loggedOff)="onLogOff($event)"></app-header>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+        <router-outlet></router-outlet>
+        <app-customers *ngIf="getLoadedFeature() === 'customers'"></app-customers>
+        <app-projects *ngIf="getLoadedFeature() === 'projects'"></app-projects>
+        <app-suppliers *ngIf="getLoadedFeature() === 'suppliers'"></app-suppliers>  
+      </div>
+    </div>
+  </div> -->
+  <div class="container">
+      <app-header (featureSelected)="onNavigate($event)" (loggedOff)="onLogOff($event)"></app-header>
+      <app-home></app-home>
+  </div>
+  
+

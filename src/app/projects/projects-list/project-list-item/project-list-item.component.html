@@ -1,0 +1,11 @@
+<a style="cursor: pointer;" class="list-group-item clearfix" [routerLink]="[index]" routerLinkActive="active">
+  <div class="pull-left">
+    <h5 class="list-group-item-heading">{{ project.getName() }}</h5>
+    <h5>{{ project.getStatus().getName() }}</h5>
+  </div>
+  <div class="pull-right">
+    <a style="cursor: pointer;"  (click)="onEdit()">Edytuj</a>
+    <a style="cursor: pointer;"  (click)="onViewBOM()">BOM</a>
+    <a style="cursor: pointer;"  (click)="onViewPandP()">Pick & Place </a>
+  </div>
+</a>

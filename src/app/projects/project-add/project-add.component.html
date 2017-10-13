@@ -1,0 +1,67 @@
+<form>
+  <div class="form-group">
+    <input type="text"
+           id="name"
+           class="form-control"
+           #nameInput
+           placeholder="Nazwa projektu">
+  </div>
+
+  <div class="form-group">
+    <input type="text"
+           id="status"
+           class="form-control"
+           #statusInput
+           value="nowy"
+           readonly>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <div class="input-group">
+        <span class="input-group-btn">
+                        <span class="btn btn-primary btn-file">
+                            BOM&hellip; <input type="file"
+                                               (change)="onChangeBOM($event)"
+                                               #bomFileNameInput
+                                               single>
+                        </span>
+        </span>
+        <input type="text"
+               class="form-control"
+               placeholder="ścieka dostępu do pliku BOM"
+               [value]="pathBom"
+               #bomInput
+               readonly>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div>
+      <div class="input-group">
+        <span class="input-group-btn">
+                      <span class="btn btn-primary btn-file">
+                          Pick & Place&hellip; <input type="file"
+                                                      (change)="onChangePandP($event)"
+                                                      #pandpFileNameInput
+                                                      single>
+                      </span>
+        </span>
+        <input type="text"
+               class="form-control"
+               placeholder="ścieka dostępu do pliku Pick & Place"
+               [value]="pathPandP"
+               #pandpInput readonly>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-success" type="submit"
+          (click)="onAdd(nameInput, statusInput, bomFileNameInput, pandpFileNameInput)">Zapisz
+  </button>
+  <button class="btn btn-danger" type="button" (click)="onCancel()">Anuluj</button>
+
+</form>
+
+<hr>

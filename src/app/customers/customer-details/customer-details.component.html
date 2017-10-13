@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-3">
+    <h3>{{ customer.getName() }}</h3>
+  </div>
+  <div class="col-md-3">
+    <h3>{{ customer.getEmail() }}</h3>
+  </div>
+  <div class="pull-right">
+    <a style="cursor: pointer;" (click)="onCustomerEdit()">
+      <h3>Edytuj</h3>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <ul class="nav nav-tabs">
+    <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
+      style="cursor: pointer;" (click)="onSelectPersons()" routerLinkActive="active">Osoby</a></li>
+    <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
+      style="cursor: pointer;" (click)="onSelectProjects()" routerLinkActive="active">Projekty</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

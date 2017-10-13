@@ -1,0 +1,26 @@
+<div class="container">
+  <hr>
+  <form>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <img src="../../assets/logo.png" height="50">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Użytkownik" #login>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+          <input type="password" class="form-control" placeholder="Hasło" #password>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <button class="btn btn-primary"
+                (click)="onLogin(login, password)">Login</button>
+      </div>
+    </div>
+  </form>
+</div>

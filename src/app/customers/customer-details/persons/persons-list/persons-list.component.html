@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-2">
+    <a style="cursor: pointer;" (click)="onAddPerson()">Dodaj Osobę</a>
+  </div>
+  <div class="col-xs-2" (click)="onRemove()">
+    <a href="#">Usuń Osoby</a>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<app-person-list-item
+  *ngFor="let personEl of persons; let i = index"
+  [person]="personEl"
+  [index]="i">
+</app-person-list-item>

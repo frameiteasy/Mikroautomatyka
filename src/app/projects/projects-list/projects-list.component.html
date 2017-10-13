@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-2">
+    <a style="cursor: pointer;" (click)="onAdd()">Dodaj Projekt</a>
+  </div>
+  <div class="col-xs-2" (click)="onRemove()">
+    <a href="#">Usuń Projekty</a>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<app-project-list-item
+  *ngFor="let projectEl of projects; let i = index"
+  [project]="projectEl"
+  [index]="i">
+</app-project-list-item>

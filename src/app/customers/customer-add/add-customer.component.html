@@ -1,0 +1,12 @@
+<form>
+  <div class="form-group">
+    <input type="text" id="name" class="form-control" #nameInput placeholder="Nazwa">
+  </div>
+  <div class="form-group">
+    <input type="text" id="email" class="form-control" #emailInput placeholder="Email">
+  </div>
+  <button class="btn btn-success" type="submit" (click)="onAdd(nameInput, emailInput)">Zapisz</button>
+  <button class="btn btn-danger" type="button" (click)="onCancel()">Anuluj</button>
+</form>
+
+<hr>
