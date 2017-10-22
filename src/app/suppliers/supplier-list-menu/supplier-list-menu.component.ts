@@ -22,4 +22,11 @@ export class SupplierListMenuComponent implements OnInit {
     this.suppliersService.storeSuppliers();
   }
 
+  onNewSupplier() {
+    // TODO code
+  }
+
+  onRemove() {
+    // TODO code
+  }
 }
