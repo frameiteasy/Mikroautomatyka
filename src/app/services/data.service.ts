@@ -4,7 +4,6 @@ import { ElementType } from '../models/element-type.model';
 import { Element } from '../models/element.model';
 import { ElementCover } from '../models/element-cover.model';
 import {ElementName} from '../models/element-name.model';
-import {Warehouse} from '../models/warehouse.model';
 import {Supplier} from '../models/supplier.model';
 
 
@@ -25,14 +24,7 @@ export class DataService {
     this.initStatuses();
     this.initElementCases();
     this.initElementTypes();
-    this.initSuppliers();
     this.loadElements();
-  }
-
-  private initSuppliers() {
-    this.suppliers = [];
-    this.suppliers.push(new Supplier(1, 'Supplier1', 'supp1@op.pl', []));
-    this.suppliers.push(new Supplier(2, 'Supplier2', 'supp2@op.pl', []));
   }
 
   private initStatuses() {
@@ -71,30 +63,30 @@ export class DataService {
   private loadElements() {
     this.elements = [];
     this.elements.push(new Element(1,
-      new ElementName('value1', this.elementCovers[0], this.elementTypes[0], []),
+      new ElementName('value1', this.elementCovers[0], this.elementTypes[0], [], 'name1'),
       'opis 1',
       100,
       20,
       11,
-      new Warehouse(1, 'magazyn1'),
+      [],
       []));
 
     this.elements.push(new Element(2,
-      new ElementName('value2', this.elementCovers[1], this.elementTypes[1], []),
+      new ElementName('value2', this.elementCovers[1], this.elementTypes[1], [], 'name2'),
       'opis 2',
       200,
       30,
       12,
-      new Warehouse(2, 'magazyn2'),
+      [],
       []));
 
     this.elements.push(new Element(3,
-      new ElementName('value3', this.elementCovers[2], this.elementTypes[2], []),
+      new ElementName('value3', this.elementCovers[2], this.elementTypes[2], [], 'name3'),
       'opis 3',
       300,
       30,
       13,
-      new Warehouse(1, 'magazyn3'),
+      [],
       []));
   }
 
