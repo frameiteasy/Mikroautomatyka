@@ -36,31 +36,36 @@ export class DataStorageService {
             const persons: Person[] = [];
             const projects: Project[] = [];
 
-            for (let indexPerson = 0, lenPersons = data[i].persons.length;
-                 indexPerson < lenPersons;
-                 indexPerson++) {
-              const firstName = data[i].persons[indexPerson].firstName;
-              const secondName = data[i].persons[indexPerson].secondName;
-              const personEmail = data[i].persons[indexPerson].email;
-              persons.push(new Person(firstName, secondName, personEmail));
+            if (data[i].persons) {
+              for (let indexPerson = 0, lenPersons = data[i].persons.length;
+                   indexPerson < lenPersons;
+                   indexPerson++) {
+                const firstName = data[i].persons[indexPerson].firstName;
+                const secondName = data[i].persons[indexPerson].secondName;
+                const personEmail = data[i].persons[indexPerson].email;
+                persons.push(new Person(firstName, secondName, personEmail));
+              }
             }
 
-            for (let indexProject = 0, lenProjects = data[i].projects.length;
-                 indexProject < lenProjects;
-                 indexProject++) {
-              const projectId = data[i].projects[indexProject].id;
-              const projectName = data[i].projects[indexProject].name;
-              const status: Status = new Status(data[i].projects[indexProject].status.id,
-                data[i].projects[indexProject].status.name);
-              const bom = data[i].projects[indexProject].bom;
-              const pandp = data[i].projects[indexProject].pandp;
-              const customerId = data[i].projects[indexProject].customerId;
-              projects.push(new Project(projectId, projectName, status, bom, pandp, customerId));
+            if (data[i].projects) {
+              for (let indexProject = 0, lenProjects = data[i].projects.length;
+                   indexProject < lenProjects;
+                   indexProject++) {
+                const projectId = data[i].projects[indexProject].id;
+                const projectName = data[i].projects[indexProject].name;
+                const status: Status = new Status(data[i].projects[indexProject].status.id,
+                  data[i].projects[indexProject].status.name);
+                const bom = data[i].projects[indexProject].bom;
+                const pandp = data[i].projects[indexProject].pandp;
+                const customerId = data[i].projects[indexProject].customerId;
+                projects.push(new Project(projectId, projectName, status, bom, pandp, customerId));
+              }
             }
 
             customers.push(new Customer(id, name, email, persons, projects));
           }
-
+          console.log('ds-getCustomers');
+          console.log(customers);
           return customers;
         }
       );
