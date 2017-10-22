@@ -11,7 +11,9 @@ import {CustomerDetailsComponent} from 'app/customers/customer-details/customer-
 import {CustomerEditComponent} from 'app/customers/customer-edit/customer-edit.component';
 import {PersonAddComponent} from 'app/customers/customer-details/persons/person-add/person-add.component';
 import {ProjectAddComponent} from 'app/projects/project-add/project-add.component';
-import {ComponentsComponent} from "./components/components.component";
+import {ComponentsComponent} from './components/components.component';
+import {SupplierEditComponent} from './suppliers/supplier-edit/supplier-edit.component';
+import {SupplierDetailsComponent} from './suppliers/supplier-details/supplier-details.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -50,7 +52,19 @@ const appRoutes: Routes = [
     ]
   },
   {path: 'projects', component: ProjectsComponent},
-  {path: 'suppliers', component: SuppliersComponent},
+  {path: 'suppliers', component: SuppliersComponent,
+    children: [
+      {path: 'new', component: SupplierEditComponent},
+      {path: ':ids', component: SupplierDetailsComponent,
+        children: [
+          {path: 'edit', component: SupplierEditComponent},
+          {path: 'persons', component: PersonsListComponent,
+            children: [
+              {path: 'new', component: PersonAddComponent}, // PersonEditComponent
+              {path: ':idp/edit', component: PersonAddComponent} // PersonEditComponent
+            ]}
+        ]}
+    ]},
   {
     path: 'components', component: ComponentsComponent}
 ]

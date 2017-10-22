@@ -33,6 +33,12 @@ import { ComponentsComponent } from './components/components.component';
 import { ComponentsListComponent } from './components/components-list/components-list.component';
 import { ComponentsListItemComponent } from './components/components-list/components-list-item/components-list-item.component';
 import { ComponentsSearchComponent } from './components/components-search/components-search.component';
+import { SuppliersListComponent } from './suppliers/suppliers-list/suppliers-list.component';
+import { SupplierSearchComponent } from './suppliers/supplier-search/supplier-search.component';
+import { SupplierListMenuComponent } from './suppliers/supplier-list-menu/supplier-list-menu.component';
+import { SupplierEditComponent } from './suppliers/supplier-edit/supplier-edit.component';
+import { SuppliersListItemComponent } from './suppliers/suppliers-list/suppliers-list-item/suppliers-list-item.component';
+import { SupplierDetailsComponent } from './suppliers/supplier-details/supplier-details.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +69,13 @@ import { ComponentsSearchComponent } from './components/components-search/compon
     ComponentsComponent,
     ComponentsListComponent,
     ComponentsListItemComponent,
-    ComponentsSearchComponent
+    ComponentsSearchComponent,
+    SuppliersListComponent,
+    SupplierSearchComponent,
+    SupplierListMenuComponent,
+    SupplierEditComponent,
+    SuppliersListItemComponent,
+    SupplierDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@ import {ProjectsService} from 'app/services/projects.service';
 import {PersonsService} from 'app/customers/customer-details/persons/services/persons.service';
 import {ComponentsService} from './services/components.service';
 import {DataStorageService} from './services/ds-customer.service';
+import {SuppliersService} from './services/suppliers.service';
+import {SupplierDataStorageService} from './services/ds-supplier.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +13,12 @@ import {DataStorageService} from './services/ds-customer.service';
   styleUrls: ['./app.component.css'],
   providers: [
     CustomersService,
+    SuppliersService,
     ProjectsService,
     PersonsService,
     ComponentsService,
-    DataStorageService]
+    DataStorageService,
+    SupplierDataStorageService]
 })
 export class AppComponent {
   loadedFeature = 'customers';
