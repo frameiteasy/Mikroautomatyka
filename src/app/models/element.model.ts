@@ -44,4 +44,8 @@ export class Element {
     return this.loss;
   }
 
+  public getWarehouseName() {
+    return 'Magazyn';
+  }
+
 }
