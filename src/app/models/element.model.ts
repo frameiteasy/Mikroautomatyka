@@ -1,6 +1,4 @@
 import {ElementName} from './element-name.model';
-import {Warehouse} from './warehouse.model';
-import {Supplier} from './supplier.model';
 
 export class Element {
   id: number;
@@ -9,8 +7,8 @@ export class Element {
   amount: number;
   limit: number;
   loss: number;
-  warehouse: Warehouse;
-  suppliers: Supplier[];
+  warehousesIds: number[];
+  suppliersIds: number[];
 
   constructor(id: number,
               name: ElementName,
@@ -18,16 +16,16 @@ export class Element {
               amount: number,
               limit: number,
               loss: number,
-              warehouse: Warehouse,
-              suppliers: Supplier[]) {
+              warehousesIds: number[],
+              suppliersIds: number[]) {
     this.id = id;
     this.name = name;
     this.description = desc;
     this.amount = amount;
     this.limit = limit;
     this.loss = loss;
-    this.warehouse = warehouse;
-    this.suppliers = suppliers;
+    this.warehousesIds = warehousesIds;
+    this.suppliersIds = suppliersIds;
   }
 
   public getElementName(): string {
@@ -44,10 +42,6 @@ export class Element {
 
   public getLoss(): number {
     return this.loss;
-  }
-
-  public getWarehouseName(): string {
-    return this.warehouse.getName();
   }
 
 }
