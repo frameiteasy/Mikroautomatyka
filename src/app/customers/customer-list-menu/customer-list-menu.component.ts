@@ -1,8 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
-import {CustomersService} from '../../services/customers.service';
-import {DataStorageService} from '../../services/ds-customer.service';
-import {Response} from '@angular/http';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CustomersService } from '../../services/customers.service';
 
 @Component({
   selector: 'app-customer-list-menu',
