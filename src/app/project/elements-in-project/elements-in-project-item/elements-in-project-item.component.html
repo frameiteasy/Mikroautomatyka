@@ -1,0 +1,22 @@
+<a style="cursor: pointer;" class="list-group-item clearfix" [routerLink]="[index]" routerLinkActive="active">
+  <div class="row">
+    <div class="col-md-5">
+      {{ item.getElement().getName().getName() }}
+    </div>
+    <div class="col-md-1">
+      {{ item.getQuantity() }}
+    </div>
+    <div class="col-md-1">
+      {{ item.getElement().getSlop() }}
+    </div>
+    <div class="col-md-2">
+      {{ getSupplierName() }}
+    </div>
+    <div class="col-md-1">
+      {{ item.getPrice() }}
+    </div>
+    <div class="pull-right">
+      <a style="cursor: pointer;" >Edytuj</a>
+    </div>
+  </div>
+</a>
