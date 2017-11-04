@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {CustomersService} from 'app/services/customers.service';
 import {ProjectsService} from 'app/services/projects.service';
 import {PersonsService} from 'app/customers/customer-details/persons/services/persons.service';
-import {ComponentsService} from './services/components.service';
+import {ElementsService} from './services/elements.service';
 import {DataStorageService} from './services/ds-customer.service';
 import {SuppliersService} from './services/suppliers.service';
 import {SupplierDataStorageService} from './services/ds-supplier.service';
@@ -16,7 +16,7 @@ import {SupplierDataStorageService} from './services/ds-supplier.service';
     SuppliersService,
     ProjectsService,
     PersonsService,
-    ComponentsService,
+    ElementsService,
     DataStorageService,
     SupplierDataStorageService]
 })
