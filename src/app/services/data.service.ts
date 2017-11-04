@@ -24,7 +24,6 @@ export class DataService {
     this.initStatuses();
     this.initElementCases();
     this.initElementTypes();
-    this.loadElements();
   }
 
   private initStatuses() {
@@ -58,36 +57,6 @@ export class DataService {
 
   getElementTypes(): ElementType[] {
     return this.elementTypes;
-  }
-
-  private loadElements() {
-    this.elements = [];
-    this.elements.push(new Element(1,
-      new ElementName('value1', this.elementCovers[0], this.elementTypes[0], [], 'name1'),
-      'opis 1',
-      100,
-      20,
-      11,
-      [],
-      []));
-
-    this.elements.push(new Element(2,
-      new ElementName('value2', this.elementCovers[1], this.elementTypes[1], [], 'name2'),
-      'opis 2',
-      200,
-      30,
-      12,
-      [],
-      []));
-
-    this.elements.push(new Element(3,
-      new ElementName('value3', this.elementCovers[2], this.elementTypes[2], [], 'name3'),
-      'opis 3',
-      300,
-      30,
-      13,
-      [],
-      []));
   }
 
   getElements(): Element[] {
