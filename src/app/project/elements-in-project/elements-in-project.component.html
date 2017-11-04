@@ -1,0 +1,27 @@
+<app-elements-in-project-search></app-elements-in-project-search>
+
+<div class="row">
+  <div class="col-md-5">
+    <h4>Nazwa</h4>
+  </div>
+  <div class="col-md-1">
+    <h4>Ilość</h4>
+  </div>
+  <div class="col-md-1">
+    <h4>Spady</h4>
+  </div>
+  <div class="col-md-2">
+    <h4>Dostawca</h4>
+  </div>
+
+  <div class="col-md-1">
+    <h4>Cena</h4>
+  </div>
+
+</div>
+<h1>{{ filteringString }}</h1>
+<app-elements-in-project-item
+  *ngFor="let element of elements | filterElementsInProject:filteringString; let i = index"
+  [item]="element"
+  [index]="i">
+</app-elements-in-project-item>
