@@ -55,8 +55,18 @@ export class SuppliersService {
     this.supplierDataStorage.storeSuppliers(this.getSuppliers());
   }
 
+  getSupplierByName(name: string): Supplier {
+    if (this.suppliers) {
+      for (const supplier of this.suppliers) {
+        if (supplier.getName() === name) {
+          return supplier;
+        }
+      }
+    }
+    return null;
+  }
+
   private loadTestSuppliers() {
-    console.log('SuppliersService.loadTestSuppliers');
     this.suppliers.push(new Supplier(1, 'A-x', 'biuro@A-x.com'));
     this.suppliers.push(new Supplier(2, 'Avnet', 'biuro@Avnet.com'));
     this.suppliers.push(new Supplier(3, 'ComSit', 'biuro@ComSit.com'));
