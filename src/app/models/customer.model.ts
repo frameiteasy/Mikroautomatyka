@@ -60,5 +60,12 @@ export class Customer {
     this.persons.push(person);
   }
 
+  public getProjectByIndex(index: number): Project {
+    if (index < this.projects.length) {
+      return this.projects[index];
+    }
+    return null;
+  }
+
 
 }
