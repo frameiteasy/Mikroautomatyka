@@ -30,13 +30,9 @@ export class CustomerDetailsComponent implements OnInit, OnChanges {
     this.route.params
       .subscribe(
       (params: Params) => {
-        console.log('CustomerDetailsComponent.ngOnInit: this.route.params');
         this.id = +params['id'];
-        console.log(this.id);
         this.customer = this.customersService.getCustomerByIndex(this.id);
-        console.log(this.customer);
         this.router.navigate(['persons'], { relativeTo: this.route });
-        console.log('CustomerDetailsComponent.ngOnInit: this.route.params');
       }
       );
 
@@ -87,6 +83,9 @@ export class CustomerDetailsComponent implements OnInit, OnChanges {
         console.log('CustomerDetailsComponent.ngOnInit: getAddingPersonSelected');
       }
       )
+
+    console.log(this.customersService.getCustomers());
+    console.log(this.customersService.getSelectedCustomer());
   }
 
   onSelectPersons() {
