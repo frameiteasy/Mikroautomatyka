@@ -19,7 +19,6 @@
   </div>
 
 </div>
-<h1>{{ filteringString }}</h1>
 <app-elements-in-project-item
   *ngFor="let element of elements | filterElementsInProject:filteringString; let i = index"
   [item]="element"
