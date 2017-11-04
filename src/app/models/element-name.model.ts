@@ -21,7 +21,7 @@ export class ElementName {
   }
 
   public getName(): string {
-    if (!this.name) {
+    if (this.name) {
       return this.name;
     }
 
