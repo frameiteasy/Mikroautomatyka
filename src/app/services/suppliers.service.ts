@@ -7,6 +7,7 @@ export class SuppliersService {
 
   public id = '7';
   private suppliersChanged = new EventEmitter<Supplier[]>();
+  private filterSuppliersChanged = new EventEmitter<string>();
   private suppliers: Supplier[] = [];
 
   constructor(private supplierDataStorage: SupplierDataStorageService) {
@@ -64,6 +65,10 @@ export class SuppliersService {
       }
     }
     return null;
+  }
+
+  getFilterSuppliersChanged() {
+    return this.filterSuppliersChanged;
   }
 
   private loadTestSuppliers() {
