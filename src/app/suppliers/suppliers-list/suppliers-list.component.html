@@ -1,6 +1,6 @@
 
 <app-suppliers-list-item
-  *ngFor = "let supplier of suppliers; let i = index"
+  *ngFor = "let supplier of suppliers | filterSuppliers:filteringString; let i = index"
   [item] =  "supplier"
   [index] = "i">
 </app-suppliers-list-item>
