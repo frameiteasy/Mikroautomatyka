@@ -6,7 +6,7 @@ import { ElementName } from '../models/element-name.model';
 @Injectable()
 export class ElementsService {
   elements: Element[];
-  filterElementsChanged = new EventEmitter<string>();
+  private filterElementsChanged = new EventEmitter<string>();
 
   constructor(private dataService: DataService) {
     this.init();
@@ -14,6 +14,10 @@ export class ElementsService {
 
   private init() {
     this.elements = this.loadTestElements();
+  }
+
+  public getFilterElementsChanged() {
+    return this.filterElementsChanged;
   }
 
   getElements() {
