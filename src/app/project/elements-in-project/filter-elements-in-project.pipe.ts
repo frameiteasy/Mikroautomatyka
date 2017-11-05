@@ -1,5 +1,5 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { ElementInProject } from '../../models/element-in-project.model';
+import {Pipe, PipeTransform} from '@angular/core';
+import {ElementInProject} from '../../models/element-in-project.model';
 
 @Pipe({
   name: 'filterElementsInProject'
@@ -14,7 +14,8 @@ export class FilterElementsInProjectPipe implements PipeTransform {
     }
     const resultArray = [];
     for (const item of value) {
-      if (item.getElement().getName().getName().startsWith(filterString)) {
+      if (item.getElement().getName().getName().toLowerCase()
+          .startsWith(filterString.toLowerCase())) {
         resultArray.push(item);
       }
     }
