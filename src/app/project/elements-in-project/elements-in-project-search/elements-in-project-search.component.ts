@@ -16,8 +16,7 @@ export class ElementsInProjectSearchComponent implements OnInit {
   }
 
   onChangeFilterElement() {
-    console.log('change filter string');
-    this.elementService.getFilterElementsChanged().emit(this.filteredElement);
+    this.elementService.getFilterElementsInProjectChanged().emit(this.filteredElement);
   }
 
 }
