@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Element } from '../../models/element.model';
 import { ElementsService } from '../../services/elements.service';
 
@@ -7,13 +7,13 @@ import { ElementsService } from '../../services/elements.service';
   templateUrl: './elements-list.component.html',
   styleUrls: ['./elements-list.component.css']
 })
-export class ElementsListComponent implements OnInit {
+export class ElementsListComponent implements OnInit, OnDestroy {
   elements: Element[];
   filteringString = '';
 
   constructor(private elementsService: ElementsService) { }
 
-  ngOnInit( ) {
+  ngOnInit() {
     this.elements = this.elementsService.getElements();
 
     this.elementsService.getFilterElementsChanged()
@@ -22,5 +22,9 @@ export class ElementsListComponent implements OnInit {
           this.filteringString = filter;
         }
       )
+  }
+
+  ngOnDestroy() {
+    // this.elementsService.getFilterElementsChanged().unsubscribe();
   }
 }
