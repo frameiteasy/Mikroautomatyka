@@ -40,6 +40,7 @@ import { ElementsInProjectSearchComponent } from './project/elements-in-project/
 import { FilterElementsInProjectPipe } from './project/elements-in-project/filter-elements-in-project.pipe';
 import { FilterSuppliersPipe } from './suppliers/suppliers-list/filter-suppliers.pipe';
 import { LoadTestDataComponent } from './load-test-data/load-test-data.component';
+import { ElementsListPipe } from './elements/elements-list/elements-list.pipe';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { LoadTestDataComponent } from './load-test-data/load-test-data.component
     ElementsInProjectSearchComponent,
     FilterElementsInProjectPipe,
     FilterSuppliersPipe,
-    LoadTestDataComponent
+    LoadTestDataComponent,
+    ElementsListPipe
   ],
   imports: [
     BrowserModule,
