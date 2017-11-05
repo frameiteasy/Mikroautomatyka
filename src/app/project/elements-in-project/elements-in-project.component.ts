@@ -18,8 +18,6 @@ export class ElementsInProjectComponent implements OnInit, OnDestroy {
               private elementService: ElementsService) { }
 
   ngOnInit() {
-    console.log('ElementsInProjectComponent.ngOnInit');
-    console.log(this.route.snapshot.parent.params);
     const customerID = this.route.snapshot.parent.params['idCustomer'];
     const projectID = this.route.snapshot.parent.params['idProject'];
     const project = this.customerService.getCustomers()[customerID].getProjects()[projectID];
@@ -27,7 +25,7 @@ export class ElementsInProjectComponent implements OnInit, OnDestroy {
 
     console.log(project);
     // this.elements = this.elementsService.getElements();
-    this.elementService.filterElementsChanged
+    this.elementService.getFilterElementsChanged()
       .subscribe(
         (filter: string) => {
           this.filteringString = filter;
@@ -37,7 +35,7 @@ export class ElementsInProjectComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.elementService.filterElementsChanged.unsubscribe();
+    this.elementService.getFilterElementsChanged().unsubscribe();
   }
 
 }
