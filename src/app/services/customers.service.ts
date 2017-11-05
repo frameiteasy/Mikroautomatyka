@@ -26,7 +26,6 @@ export class CustomersService {
   private customers: Customer[] = [];
   private statuses: Status[];
   private selectedCustomer: Customer;
-  private selectedProject: Project;
 
   constructor(private logging: LoggingService,
               private dataService: DataService,
@@ -51,11 +50,6 @@ export class CustomersService {
   getProjectsByCustomerIndex(index: number): Project[] {
     return this.customers[index].getProjects();
   }
-
-  // setCustomerSelected(customer: Customer) {
-  //   this.selectedCustomer = customer;
-  //   this.customerSelected.emit(this.selectedCustomer);
-  // }
 
   init() {
     this.statuses = this.dataService.getStatuses();
