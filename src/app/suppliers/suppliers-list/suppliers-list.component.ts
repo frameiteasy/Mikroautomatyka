@@ -30,6 +30,6 @@ export class SuppliersListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.suppliersService.getFilterSuppliersChanged().unsubscribe();
+    // this.suppliersService.getFilterSuppliersChanged().unsubscribe();
   }
 }
