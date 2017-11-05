@@ -19,6 +19,7 @@ import {ProjectDetailsComponent} from './project/project-details.component';
 import {PickAndPlaceComponent} from './project/pick-and-place/pick-and-place.component';
 import {BomComponent} from './project/bom/bom.component';
 import {ElementsInProjectComponent} from './project/elements-in-project/elements-in-project.component';
+import {LoadTestDataComponent} from './load-test-data/load-test-data.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -79,7 +80,8 @@ const appRoutes: Routes = [
         ]}
     ]},
   {
-    path: 'components', component: ElementsComponent}
+    path: 'components', component: ElementsComponent},
+  {path: 'loadtestdata', component: LoadTestDataComponent}
 ]
 
 @NgModule({
