@@ -25,7 +25,7 @@ export class ElementsInProjectComponent implements OnInit, OnDestroy {
 
     console.log(project);
     // this.elements = this.elementsService.getElements();
-    this.elementService.getFilterElementsChanged()
+    this.elementService.getFilterElementsInProjectChanged()
       .subscribe(
         (filter: string) => {
           this.filteringString = filter;
@@ -35,7 +35,7 @@ export class ElementsInProjectComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.elementService.getFilterElementsChanged().unsubscribe();
+    // this.elementService.getFilterElementsInProjectChanged().unsubscribe();
   }
 
 }
