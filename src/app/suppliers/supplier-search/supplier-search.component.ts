@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SuppliersService } from '../../services/suppliers.service';
 
 @Component({
   selector: 'app-supplier-search',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupplierSearchComponent implements OnInit {
 
-  constructor() { }
+  filteredSupplier = '';
+
+  constructor(private supplierService: SuppliersService) { }
 
   ngOnInit() {
+  }
+
+  onChangeFilterSupplier() {
+    this.supplierService.getFilterSuppliersChanged().emit(this.filteredSupplier);
   }
 
 }
