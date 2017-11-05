@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ElementsService } from '../../services/elements.service';
 
 @Component({
   selector: 'app-components-search',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElementsSearchComponent implements OnInit {
 
-  constructor() { }
+  filteredElement = '';
+
+  constructor(private elementService: ElementsService) { }
 
   ngOnInit() {
+  }
+
+  onChangeFilterElement() {
+    this.elementService.getFilterElementsChanged().emit(this.filteredElement);
   }
 
 }
