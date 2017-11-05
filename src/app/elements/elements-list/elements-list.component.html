@@ -14,7 +14,7 @@
 
 </div>
 <app-components-list-item
-  *ngFor="let el of elements; let i = index"
+  *ngFor="let el of elements | filterElements:filteringString; let i = index"
   [item]="el"
   [index]="i">
 </app-components-list-item>

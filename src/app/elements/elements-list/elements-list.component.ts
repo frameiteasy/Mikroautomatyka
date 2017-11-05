@@ -9,12 +9,18 @@ import { ElementsService } from '../../services/elements.service';
 })
 export class ElementsListComponent implements OnInit {
   elements: Element[];
+  filteringString = '';
 
   constructor(private elementsService: ElementsService) { }
 
   ngOnInit( ) {
     this.elements = this.elementsService.getElements();
-    console.log(this.elements);
-  }
 
+    this.elementsService.getFilterElementsChanged()
+      .subscribe(
+        (filter: string) => {
+          this.filteringString = filter;
+        }
+      )
+  }
 }
