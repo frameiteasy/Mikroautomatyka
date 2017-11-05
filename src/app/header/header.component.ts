@@ -13,8 +13,8 @@ export class HeaderComponent implements OnInit {
   constructor(private versionService: VersionService) {}
 
   ngOnInit() {
-    this.versionService.setVersion('v0.05');
-    this.versionService.setVersionDate('2017-10-22');
+    this.versionService.setVersion('v0.06');
+    this.versionService.setVersionDate('2017-11-05');
   }
 
   onLogOff() {
