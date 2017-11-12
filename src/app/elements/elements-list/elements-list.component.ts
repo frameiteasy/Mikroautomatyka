@@ -15,6 +15,7 @@ export class ElementsListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.elements = this.elementsService.getElements();
+    this.sortElementsByName();
 
     this.elementsService.getFilterElementsChanged()
       .subscribe(
@@ -22,6 +23,22 @@ export class ElementsListComponent implements OnInit, OnDestroy {
           this.filteringString = filter;
         }
       )
+  }
+
+  sortElementsByName() {
+    this.elements.sort(
+      (el1, el2): number => {
+        if (el1.getName().getName().toLowerCase() === el2.getName().getName().toLowerCase()) {
+          return 0;
+        } else {
+          if ((el1.getName().getName().toLowerCase() > el2.getName().getName().toLowerCase())) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }
+      }
+    );
   }
 
   ngOnDestroy() {
