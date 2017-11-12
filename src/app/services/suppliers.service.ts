@@ -40,6 +40,7 @@ export class SuppliersService {
       .subscribe(
         (suppliers: Supplier[]) => {
           this.suppliers = suppliers;
+          this.sortByName();
           this.suppliersChanged.emit(this.suppliers.slice());
         },
         (error) => {
@@ -69,6 +70,22 @@ export class SuppliersService {
 
   getFilterSuppliersChanged() {
     return this.filterSuppliersChanged;
+  }
+
+  sortByName() {
+    this.suppliers.sort(
+      (sup1, sup2): number => {
+        if (sup1.getName().toLowerCase() === sup2.getName().toLowerCase()) {
+          return 0;
+        } else {
+          if (sup1.getName().toLowerCase() > sup2.getName().toLowerCase()) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }
+      }
+    )
   }
 
   private loadTestSuppliers() {
