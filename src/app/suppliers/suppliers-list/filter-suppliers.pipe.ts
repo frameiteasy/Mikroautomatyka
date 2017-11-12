@@ -9,16 +9,18 @@ export class FilterSuppliersPipe implements PipeTransform {
   filterString = '';
 
   transform(value: Supplier[], filterString: string): any {
-    if (value.length === 0 || filterString === '') {
+    if (value.length === 0 || filterString === '' || filterString.length < 2) {
       return value;
     }
     const resultArray = [];
     for (const item of value) {
-      if (item.getName().toLowerCase().startsWith(filterString.toLowerCase())) {
+      if (item.getName().toLowerCase().indexOf(filterString.toLowerCase()) !== -1) {
         resultArray.push(item);
       }
     }
     return resultArray;
   }
+
+
 
 }
