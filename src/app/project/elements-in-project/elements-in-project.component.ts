@@ -22,6 +22,7 @@ export class ElementsInProjectComponent implements OnInit, OnDestroy {
     const projectID = this.route.snapshot.parent.params['idProject'];
     const project = this.customerService.getCustomers()[customerID].getProjects()[projectID];
     this.elements = this.customerService.getCustomers()[customerID].getProjects()[projectID].getElements();
+    this.sortElementsByName();
 
     console.log(project);
     // this.elements = this.elementsService.getElements();
@@ -32,6 +33,22 @@ export class ElementsInProjectComponent implements OnInit, OnDestroy {
         }
       )
 
+  }
+
+  sortElementsByName() {
+    this.elements.sort(
+      (el1, el2): number => {
+        if (el1.getElement().getName().getName().toLowerCase() === el2.getElement().getName().getName().toLowerCase()) {
+          return 0;
+        } else {
+          if ((el1.getElement().getName().getName().toLowerCase() > el2.getElement().getName().getName().toLowerCase())) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }
+      }
+    );
   }
 
   ngOnDestroy() {
