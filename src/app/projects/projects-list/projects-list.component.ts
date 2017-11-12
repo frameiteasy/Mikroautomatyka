@@ -24,6 +24,7 @@ export class ProjectsListComponent implements OnInit {
         (params: Params) => {
           this.custIndex = +params['id'];
           this.projects = this.customersService.getProjectsByCustomerIndex(this.custIndex);
+          this.sortProjectsByName();
         }
       );
   }
@@ -36,5 +37,21 @@ export class ProjectsListComponent implements OnInit {
 
   onRemove() {
     this.projectsService.letRemoveProjects();
+  }
+
+  sortProjectsByName() {
+    this.projects.sort(
+      (proj1, proj2): number => {
+        if (proj1.getName().toLowerCase() === proj2.getName().toLowerCase()) {
+          return 0;
+        } else {
+          if (proj1.getName().toLowerCase() > proj2.getName().toLowerCase()) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }
+      }
+    );
   }
 }
